@@ -27,7 +27,7 @@ processus saisieProcessus() {
     proc.priorite = saisieEntier(0, 5);
     while(proc.priorite < 0) {
         printf("La valeur est incorrecte, veuillez réessayer : ");
-        proc.priorite = saisieEntier(0, 0);
+        proc.priorite = saisieEntier(0, 5);
     }
 
     return proc;
