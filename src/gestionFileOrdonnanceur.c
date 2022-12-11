@@ -6,7 +6,7 @@ void afficherFileOrdonnanceur(PtrOrdonnanceur ordonnanceur) {
     }
     else{
         printf(" Nom     | Durée     | Priorité\n");
-        SEP
+        SEPARATION_AFFICHAGE_FILE
         while(ordonnanceur){
             printf(" %6.6s  |  %7d  |  %7d\n", ordonnanceur->processus.nom, ordonnanceur->processus.dureeExec, ordonnanceur->processus.priorite);
             ordonnanceur = ordonnanceur->next;
