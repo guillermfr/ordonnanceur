@@ -51,7 +51,7 @@ PtrOrdonnanceur creernoeud(processus proc, PtrOrdonnanceur suiv) {
     @param queue Pointeur sur la queue de la file
     @param proc Processus à ajouter dans la file
 */
-void enfiler(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue, processus proc) {
+void ajout_activite(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue, processus proc) {
 
     // On commence par créer le pointeur à ajouter à la file
     PtrOrdonnanceur ptr = creernoeud(proc, NULL);
@@ -72,7 +72,7 @@ void enfiler(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue, processus proc) {
     @param queue Pointeur sur la queue de la file
     @return Processu défilé
 */
-processus defiler(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue) {
+processus step(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue) {
 
     // On crée un pointeur qui servira à stocker les informations du processus défilé et on l'initialise
     PtrOrdonnanceur ptr = *tete;
@@ -90,5 +90,30 @@ processus defiler(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue) {
     proc = ptr->processus;
     free(ptr);
     return proc;
-    
+
+}
+
+/*
+    Exécute l'ensemble des processus de la file
+    @param tete Pointeur sur la tete de la file
+    @param queue Pointeur sur la queue de la file
+*/
+void run(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue) {
+
+    // Si la file est vide, on l'affiche dans le terminal et on sort de la procédure
+    if(!(*tete)) {
+        printf("Il n'y a pas de processus à exécuter.\n");
+        return;
+    }
+
+    processus proc;
+
+    // Exécution des processus, on affiche les informations sur le processus en cours d'utilisation après l'avoir défilé
+    printf("Exécution des processus\n");    
+    while(*tete) {
+        proc = step(tete, queue);
+        printf("Exécution du processus \"%s\" de priorité %d et de durée %d secondes...\n", proc.nom, proc.priorite, proc.dureeExec);
+        sleep(proc.dureeExec);
+    }
+
 }

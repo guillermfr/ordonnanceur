@@ -7,9 +7,11 @@
 
 #include "gestionProcessus.h"
 
+// Déclaration du prototype des fonctions
 void afficherFileOrdonnanceur(PtrOrdonnanceur ordonnanceur);
 PtrOrdonnanceur creernoeud(processus proc, PtrOrdonnanceur suiv);
-void enfiler(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue, processus proc);
-processus defiler(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue);
+void ajout_activite(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue, processus proc);
+processus step(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue);
+void run(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue);
 
 #endif
