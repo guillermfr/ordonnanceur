@@ -10,5 +10,6 @@
 void afficherFileOrdonnanceur(PtrOrdonnanceur ordonnanceur);
 PtrOrdonnanceur creernoeud(processus proc, PtrOrdonnanceur suiv);
 void enfiler(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue, processus proc);
+processus defiler(PtrOrdonnanceur *tete, PtrOrdonnanceur *queue);
 
 #endif
