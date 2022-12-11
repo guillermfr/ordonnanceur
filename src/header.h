@@ -8,6 +8,7 @@
 #include "defines.h"
 #include "structures.h"
 
+#include "menu.h"
 #include "userInput.h"
 #include "gestionProcessus.h"
 #include "gestionFileOrdonnanceur.h"
