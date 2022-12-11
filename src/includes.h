@@ -8,5 +8,6 @@
 #include <ctype.h>
 #include <time.h>
 #include <math.h>
+#include <unistd.h>
 
 #endif
