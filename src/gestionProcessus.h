@@ -7,7 +7,7 @@
 
 #include "userInput.h"
 
+// Déclaration du prototype des fonctions
 processus saisieProcessus();
-void afficherProcessus(processus proc);
 
 #endif

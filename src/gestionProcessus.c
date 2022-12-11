@@ -1,5 +1,9 @@
 #include "gestionProcessus.h"
 
+/*
+    Permet de saisir les informations sur le processus à ajouter
+    @return Processus à ajouter à la file
+*/
 processus saisieProcessus() {
 
     processus proc;
@@ -19,17 +23,13 @@ processus saisieProcessus() {
         proc.dureeExec = saisieEntier(0, 0);
     }
 
-    printf("Veuillez entrer la priorité du processus : ");
-    proc.priorite = saisieEntier(0, 0);
-    while(proc.priorite < 1) {
+    printf("Veuillez entrer la priorité du processus (entre 0 et 5) : ");
+    proc.priorite = saisieEntier(0, 5);
+    while(proc.priorite < 0) {
         printf("La valeur est incorrecte, veuillez réessayer : ");
         proc.priorite = saisieEntier(0, 0);
     }
 
     return proc;
 
-}
-
-void afficherProcessus(processus proc) {
-    printf("Nom : %s\nDurée d'exécution : %d\nPriorité : %d\n", proc.nom, proc.dureeExec, proc.priorite);
 }
